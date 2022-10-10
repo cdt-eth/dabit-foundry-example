@@ -18,4 +18,13 @@ contract CounterTest is Test {
 
         emit log_named_int("the value is", value);
     }
+
+    function testIncrementCounter() public {
+        counter.incrementCounter();
+        int256 value = counter.getCount();
+
+        assertEq(value, 11);
+
+        emit log_named_int("the value is", value);
+    }
 }
